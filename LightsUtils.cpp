@@ -154,6 +154,21 @@ int LightsUtils::setColorValue(const char* led, int color, bool trigger)
 }
 
 /**
+ * Check if the backlight is available
+ * @return true if available, false otherwise
+ */
+bool LightsUtils::isBacklightAvailable()
+{
+    int fd = 0;
+    fd = open(BACKLIGHT_BRIGHTNESS, O_RDONLY);
+    if (fd < 0) {
+        return false;
+    }
+    close(fd);
+    return true;
+}
+
+/**
  * Set the color value
  * 
  * @param color = RGB color value

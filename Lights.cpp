@@ -69,13 +69,17 @@ ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
 
     // Manage backlight specific case
     if (config->hwLight.type == LightType::BACKLIGHT) {
-        int ret = LightsUtils::setBacklightValue(state.color);
-        pthread_mutex_unlock(&config->writeMutex);
-        if (ret < 0) {
-            return ScopedAStatus::fromExceptionCode(EX_TRANSACTION_FAILED);
-        } else {
-            return ScopedAStatus::ok();
+        if (LightsUtils::isBacklightAvailable()) {
+            int ret = LightsUtils::setBacklightValue(state.color);
+            pthread_mutex_unlock(&config->writeMutex);
+            if (ret < 0) {
+                return ScopedAStatus::fromExceptionCode(EX_TRANSACTION_FAILED);
+            } else {
+                return ScopedAStatus::ok();
+            }
         }
+        // case no backlight available: stub
+        return ScopedAStatus::ok();
     }
 
     const char* name = LightsUtils::getLedName(config->hwLight.type);

@@ -33,6 +33,7 @@ class LightsUtils {
 	public:
 		static const char* getLedName(LightType type);
 		static int setColorValue(const char* led, int color, bool trigger);
+		static bool isBacklightAvailable();
 		static int setBacklightValue(int color);
 		static const char* getFlashModeName(FlashMode mode);
 		static const char* getLightTypeName(LightType type);
