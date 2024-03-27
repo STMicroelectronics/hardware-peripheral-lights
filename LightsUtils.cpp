@@ -36,14 +36,14 @@ char const* const LED_TRIGGER = "/sys/class/leds/%s/trigger";
 char const* const LED_BRIGHTNESS = "/sys/class/leds/%s/brightness";
 char const* const LED_MAX_BRIGHTNESS = "/sys/class/leds/%s/max_brightness";
 
-char const* const LED_RED_NAME = "red";
-char const* const LED_BLUE_NAME = "heartbeat";
+// char const* const LED_RED_NAME = "red";
+char const* const LED_BLUE_NAME = "blue:heartbeat";
 
 char const* const LED_HW_TRIGGER_ON = "heartbeat";
 char const* const LED_HW_TRIGGER_OFF = "none";
 
-char const* const BACKLIGHT_BRIGHTNESS = "/sys/class/backlight/panel-backlight/brightness";
-char const* const BACKLIGHT_MAX_BRIGHTNESS = "/sys/class/backlight/panel-backlight/max_brightness";
+char const* const BACKLIGHT_BRIGHTNESS = "/sys/class/backlight/panel-lvds-backlight/brightness";
+char const* const BACKLIGHT_MAX_BRIGHTNESS = "/sys/class/backlight/panel-lvds-backlight/max_brightness";
 
 
 /**
@@ -55,7 +55,7 @@ const char* LightsUtils::getLedName(LightType type)
 {
     switch (type) {
         case LightType::NOTIFICATIONS:
-            return LED_RED_NAME;
+            return LED_BLUE_NAME;
         case LightType::ATTENTION:
             return LED_BLUE_NAME;
         default:
