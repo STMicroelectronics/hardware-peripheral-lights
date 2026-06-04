@@ -135,8 +135,8 @@ ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
 ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
     LOG(INFO) << "Lights reporting supported lights";
 
-    for (auto i = availableLights.begin(); i != availableLights.end(); i++) {
-        lights->push_back(i->hwLight);
+    for (auto & availableLight : availableLights) {
+        lights->push_back(availableLight.hwLight);
     }
 
     return ScopedAStatus::ok();

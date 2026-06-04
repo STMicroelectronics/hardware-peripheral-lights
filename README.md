@@ -1,6 +1,6 @@
 # hardware-lights #
 
-This module contains the STMicroelectronics android.hardware.lights binary source code.
+This module contains the STMicroelectronics source code for the android.hardware.lights service binary..
 
 It is part of the STMicroelectronics delivery for Android.
 
@@ -12,20 +12,20 @@ Please see the Android delivery release notes for more details.
 ## Documentation ##
 
 * The [release notes][] provide information on the release.
-[release notes]: https://wiki.st.com/stm32mpu-ecosystem-v5/wiki/STM32_MPU_OpenSTDroid_release_note_-_v5.1.0
+[release notes]: https://wiki.st.com/stm32mpu/wiki/STM32_MPU_OpenSTDroid_release_note_-_v6.2.0
 
 ## Dependencies ##
 
-This module can not be used alone. It is part of the STMicroelectronics delivery for Android.
+This module cannot be used alone. It is part of the STMicroelectronics delivery for Android.
 
 ```
 PRODUCT_PACKAGES += \
-    android.hardware.lights-service.stm32mpu \
+    android.hardware.lights-service.stm32mpu
 ```
 
-## Containing ##
+## Contents ##
 
-This directory contains the sources and associated Android makefile to generate the lights binary.
+This directory contains the sources and associated Android build files to generate the lights binary.
 
 ## License ##
 

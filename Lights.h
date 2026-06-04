@@ -46,7 +46,7 @@ struct HwLightConfig {
 class Lights : public BnLights {
     private:
         std::vector<HwLightConfig> availableLights;
-        int checkFlashParams(const HwLightState& state);
+        static int checkFlashParams(const HwLightState& state);
         void addLight(LightType const type, int const ordinal);
     public:
         Lights();

@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-#include <errno.h>
+#include <cerrno>
 #include <fcntl.h>
 #include <pthread.h>
-#include <stdint.h>
-#include <stdlib.h>
-#include <string.h>
+#include <cstdint>
+#include <cstdlib>
+#include <cstring>
 #include <unistd.h>
 #include <vector>
 
@@ -27,10 +27,10 @@
 
 #include <android-base/logging.h>
 
-namespace aidl {
-namespace android {
-namespace hardware {
-namespace light {
+
+
+
+namespace aidl::android::hardware::light {
 
 char const* const LED_TRIGGER = "/sys/class/leds/%s/trigger";
 char const* const LED_BRIGHTNESS = "/sys/class/leds/%s/brightness";
@@ -299,7 +299,4 @@ const char* LightsUtils::getFlashModeName(FlashMode mode)
     return ch;
 }
 
-}  // namespace light
-}  // namespace hardware
-}  // namespace android
-}  // namespace aidl
+} // namespace aidl::android::hardware::light
